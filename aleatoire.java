@@ -8,7 +8,7 @@ public class aleatoire {
 	{
 		Random rand = new Random();
 		int nombreCache = 0;
-		nombreCache = rand.nextInt(8);
+		nombreCache = rand.nextInt(8) + 1; //aléatoire entre 1 et 8
 		return nombreCache;	 
 	}
 	
@@ -30,6 +30,23 @@ public class aleatoire {
 	    	  res.add(nbr);
 	      }
 		return res;
+	}
+	//Genère la combinaison secrète avec la classe Pion à partir du code secret
+	public static ArrayList<Pion> combinaisonSecrète(ArrayList<Integer> code) 
+	{
+		ArrayList<Pion> LesPions = Pion.getLesPions(); //on recupère l'esnemble des couleurs
+		ArrayList<Pion> combi = new ArrayList<Pion>(); //nouvelle Liste qui permettra de stocker la combi secrète avec la classe Pion
+		for(Integer lecode : code)
+		{
+			for(Pion lePion : LesPions)
+			{
+				if(lePion.getIdPion() == lecode) //si le pion est concerné, on l'ajoute à la combi secrète
+				{
+					combi.add(lePion);
+				}
+			}
+		}
+		return combi;
 	}
 
 }
