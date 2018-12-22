@@ -34,4 +34,6 @@ public class traitement
 		}
 		return blanc;
 	}
+	
+	
 }

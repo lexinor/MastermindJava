@@ -9,8 +9,12 @@ public class main {
 		//affichage.affichage();
 		ArrayList<Integer> code = aleatoire.generationCode();
 		ArrayList<Pion> combinaisonSecrete = aleatoire.combinaisonSecrète(code); 
-		
 		affichage.ModeTriche(combinaisonSecrete);
+		ArrayList<Pion> saisieJoueur = Saisie.saisieCombinaison();
+		affichage.ModeTriche(saisieJoueur);
+		
+		//reste à faire : fonction jeu qui boucle tant que la partie n'est pas finie, utiliser les 2
+		//fonctions de traitement
 	}
 
 }
