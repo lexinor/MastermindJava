@@ -24,14 +24,31 @@ public class traitement
 	public static Integer controleBlanc(ArrayList<Pion> combinaisonSecrete, ArrayList<Pion> propositionJoueur)
 	{
 		Integer blanc = 0;
-		
-		for(int i =0; i<=3; i++)
+		for(int i =0; i<=3 ; i++)
 		{
-			if(combinaisonSecrete.get(i).equals(propositionJoueur.get(i)))
+		
+			if(combinaisonSecrete.get(i).getIdPion() == propositionJoueur.get(i).getIdPion())
 			{
 				blanc++;
 			}
 		}
+		/*
+		for(Pion lePionSecret : combinaisonSecrete )
+		{
+			Integer in = lePionSecret.getIdPion();
+			for(Pion lePionJoueur : propositionJoueur)
+			{
+				Integer iot = lePionJoueur.getIdPion();
+				if(iot == in)
+				{
+					blanc++;
+				}
+			}
+			
+		} */
+		
+		
+		
 		return blanc;
 	}
 	
