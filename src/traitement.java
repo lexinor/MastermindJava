@@ -18,6 +18,16 @@ public class traitement
 				}
 			}
 		}
+		
+		//on décrémente les pions déjà blancs
+		for(int i =0; i<=3 ; i++)
+		{
+		
+			if(combinaisonSecrete.get(i).getIdPion() == propositionJoueur.get(i).getIdPion())
+			{
+				noir--;
+			}
+		}
 		return noir;
 	}
 	//Cette méthode retourne le nombre de pions corrects et bien placés

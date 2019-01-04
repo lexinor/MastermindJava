@@ -9,7 +9,7 @@ public class Saisie
 		 Scanner scan = new Scanner(System.in);
 		  for(int i=0; i<=3; i++)
 		    {
-		    	System.out.println("saisir un nombre");
+		    	System.out.println("saisir le nombre N°"+ i);
 		    	int str = scan.nextInt();
 		    	if(Integer.toString(str).length() == 1 && !nbrDifferents.contains(str))
 		    	{
@@ -43,7 +43,7 @@ public class Saisie
 		   */
 		    for(int i=0; i<=3; i++)
 		    {
-		    	System.out.println("saisir un nombre");
+		    	System.out.println("saisir le nombre N°"+ (i+1));
 		    	int str = scan.nextInt();
 		    	    	
 		    	propositionJoueur.add(str);

@@ -7,16 +7,17 @@ public class jeu {
 		boolean trouve = false;
 		int essais = 10;
 		
+		ArrayList<Integer> code = aleatoire.generationCode();
+		ArrayList<Pion> combinaisonSecrete = aleatoire.combinaisonSecrète(code); //combi secrete
+		affichage.ModeTriche(combinaisonSecrete);
 		while(!trouve && essais > 0)
 		{
-			ArrayList<Integer> code = aleatoire.generationCode();
-			ArrayList<Pion> combinaisonSecrete = aleatoire.combinaisonSecrète(code); //combi secrete
-			affichage.ModeTriche(combinaisonSecrete);
+			
 			ArrayList<Pion> saisieJoueur = Saisie.saisieCombinaison(); //propo du joueur
 			int blanc = traitement.controleBlanc(combinaisonSecrete, saisieJoueur);
 			int noir = traitement.controleNoir(combinaisonSecrete, saisieJoueur);
-			System.out.println(" pion correctement placés" + blanc);
-			System.out.println("pion justes mais mal placés " + noir);
+			System.out.println(" pion Blancs :  " + blanc);
+			System.out.println("pion Noirs  :  " + noir);
 			essais--;
 			if(blanc ==4)
 			{
