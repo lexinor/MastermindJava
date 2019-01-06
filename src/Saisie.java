@@ -83,5 +83,49 @@ public class Saisie
 		    }
 		    return laPropositionJoueur;			
 	}	
+	
+	
+public static int choixModeJeu()
+{
+	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	
+	boolean goodInput = false;
+	// Tant que la saisie n'est pas valide on boucle
+	int userInput =0;
+	while(!goodInput)
+	{
+		System.out.println("Quel version du Mastermind voulez-vous ?");
+		System.out.println("1 -- CONSOLE");
+		System.out.println("2 -- GRAPHIQUE");
+    	//int str = scan.nextInt();			    	
+    	
+    	try {
+    		String userStr = reader.readLine(); // On récupère l'input de l'utilisateur
+	    	 userInput = Integer.parseInt(userStr); // On essaye de le parser en un Integer
+	    	
+	    	if(userInput > 0 && userInput < 3) 
+	    	{
+	    		goodInput = true; // On repasse le boolean à true
+	    	}
+	    	else
+	    		System.out.println("Veuillez choisir votre mode de jeu : (1/2)");
+	    		
+		}
+    	catch (IOException e)
+    	{
+    		System.out.println("Veuillez saisir une valeur comprise entre 1 et 2");
+			System.out.println("Veuillez choisir votre mode de jeu : (1/2)");
+		}
+    	catch (NumberFormatException ex) 	
+    	{
+    		System.out.println("Vous devez saisir un chiffre entre 1 et 2 !");
+			System.out.println("Veuillez choisir votre mode de jeu : (1/2)");
+		}
+	}  
+	return userInput;
+
+	
+		
+}
 
 }
