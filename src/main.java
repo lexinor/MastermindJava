@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-//couche dialogue utilisateur
+// Couche dialogue utilisateur
 
 public class main {
 	

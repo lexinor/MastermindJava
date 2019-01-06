@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -30,27 +34,42 @@ public class Saisie
 		//à tester
 		   //demander à l'util une combi de 4 chiffres, convertir cette combi en collection de Pion et la retourner
 			affichage.affichageCouleurs(); //donne à l'util les nombres associés à chaque couleur
-		   Scanner scan = new Scanner(System.in);
+			
+			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		   
 		   ArrayList<Integer> propositionJoueur = new ArrayList<Integer>(); //les valeurs entrées par l'util
 		   ArrayList<Pion> LesPions = Pion.getLesPions(); //la liste des pions de la classe
 		   ArrayList<Pion> laPropositionJoueur = new ArrayList<Pion>(); //laproposition convertie en Pion
-		    
-		  /*   ArrayList<Integer> nbrDifferents = SaisirSerie();
-		   for(Integer propo : nbrDifferents)
-		   {
-			   propositionJoueur.add(propo);
-		   }
-		   */
-		    for(int i=0; i<=3; i++)
+		  
+		    for(int i = 0; i <= 3; i++)
 		    {
-		    	System.out.println("saisir le nombre N°"+ (i+1));
-		    	int str = scan.nextInt();
-		    	    	
-		    	propositionJoueur.add(str);
-		    	
+		    	boolean goodInput = false;
+		    	// Tant que la saisie n'est pas valide on boucle
+		    	while(!goodInput)
+		    	{
+		    		System.out.println("Saisissez le nombre N°"+ (i+1));
+			    	//int str = scan.nextInt();			    	
+			    	
+			    	try {
+			    		String userStr = reader.readLine(); // On récupère l'input de l'utilisateur
+				    	int userInput = Integer.parseInt(userStr); // On essaye de le parser en un Integer
+				    	
+				    	if(userInput > 0 && userInput < 9) // Si la valeur reçu est bien entre 1 et 8
+				    	{
+				    		propositionJoueur.add(userInput); // On l'ajoute à l'ArrayList des saisies
+				    		goodInput = true; // On repasse le booleen à true
+				    	}
+				    	else
+				    		System.out.println("Veuillez entrer une valeur entre 1 et 8 \n");
+				    		
+					} catch (IOException e) {
+						System.out.println("Veuillez entrer un chiffre entre 1 et 8");
+					}
+			    	catch (NumberFormatException ex) {
+						System.out.println("\nSeul des chiffres sont acceptés !");
+					}
+		    	}  	
 		    }
-		  
-		  
 		    
 		    for(Integer laProposition : propositionJoueur)
 		    {
@@ -62,9 +81,7 @@ public class Saisie
 		    		}
 		    	}
 		    }
-		    return laPropositionJoueur;
-			
-	}
-	
+		    return laPropositionJoueur;			
+	}	
 
 }
