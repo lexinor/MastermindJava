@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 // Couche dialogue utilisateur
 
 public class main {

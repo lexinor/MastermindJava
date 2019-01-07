@@ -8,25 +8,6 @@ public class jeu {
 	{
 		
 		// Proposer choix type d'affichage sur Jeu - Graphique ou Console
-		
-//		PropositionTypeJeu()
-		
-		// Si choixType == 1 -> Console
-		// Si choixType == 2 -> Graphique
-		
-		// Si choix console
-//		switch (ChoixType) 
-//		{
-//		case 1: //  Console
-//			// Mettre le code de la version Console ICI
-//			break;
-//		case 2: // Graphique
-//			
-//			break;
-//		default:
-//			// Message d'Erreur ou autre
-//			break;
-//		}
 		int choixModeJeu = Saisie.choixModeJeu();
 		switch(choixModeJeu)
 		{
@@ -64,7 +45,11 @@ public class jeu {
 			break;
 		
 		case 2:
-			System.out.println("vous avez choisi le mode graphique");
+			System.out.println("vous avez choisi le mode graphique [-----]");
+			Window win = new Window("MasterMind",400,700);
+			
+			ArrayList<Integer> codeWindow = aleatoire.generationCode();
+			ArrayList<Pion> combinaisonSecreteWindow = aleatoire.combinaisonSecrète(codeWindow); //combi secrete
 			break;
 			
 			

@@ -96,7 +96,7 @@ public static int choixModeJeu()
 	{
 		System.out.println("Quel version du Mastermind voulez-vous ?");
 		System.out.println("1 -- CONSOLE");
-		System.out.println("2 -- GRAPHIQUE");
+		System.out.println("2 -- GRAPHIQUE (Work in Progress)");
     	//int str = scan.nextInt();			    	
     	
     	try {
