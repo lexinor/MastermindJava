@@ -1,66 +1,41 @@
 import java.util.ArrayList;
 
 //couche métier
-public class traitement 
-{
-	//Cette méthode retourne le nombre de pions corrects mais pas forçément bien placés
-	public static Integer controleNoir(ArrayList<Pion> combinaisonSecrete, ArrayList<Pion> propositionJoueur)
-	{
+public class traitement {
+	// Cette méthode retourne le nombre de pions corrects mais pas forçément bien
+	// placés
+	public static Integer controleNoir(ArrayList<Pion> combinaisonSecrete, ArrayList<Pion> propositionJoueur) {
 		Integer noir = 0;
-		
-		for(Pion lePionSecret : combinaisonSecrete )
-		{
-			for(Pion lePionJoueur : propositionJoueur)
-			{
-				if(lePionSecret.getIdPion() == lePionJoueur.getIdPion())
-				{
+
+		for (Pion lePionSecret : combinaisonSecrete) {
+			for (Pion lePionJoueur : propositionJoueur) {
+				if (lePionSecret.getIdPion() == lePionJoueur.getIdPion()) {
 					noir++;
 				}
 			}
 		}
-		
-		//on décrémente les pions déjà blancs
-		for(int i =0; i<=3 ; i++)
-		{
-		
-			if(combinaisonSecrete.get(i).getIdPion() == propositionJoueur.get(i).getIdPion())
-			{
+
+		// on décrémente les pions déjà blancs
+		for (int i = 0; i <= 3; i++) {
+
+			if (combinaisonSecrete.get(i).getIdPion() == propositionJoueur.get(i).getIdPion()) {
 				noir--;
 			}
 		}
 		return noir;
 	}
-	//Cette méthode retourne le nombre de pions corrects et bien placés
-	public static Integer controleBlanc(ArrayList<Pion> combinaisonSecrete, ArrayList<Pion> propositionJoueur)
-	{
+
+	// Cette méthode retourne le nombre de pions corrects et bien placés
+	public static Integer controleBlanc(ArrayList<Pion> combinaisonSecrete, ArrayList<Pion> propositionJoueur) {
 		Integer blanc = 0;
-		for(int i =0; i<=3 ; i++)
-		{
-		
-			if(combinaisonSecrete.get(i).getIdPion() == propositionJoueur.get(i).getIdPion())
-			{
+		for (int i = 0; i <= 3; i++) {
+
+			if (combinaisonSecrete.get(i).getIdPion() == propositionJoueur.get(i).getIdPion()) {
 				blanc++;
 			}
 		}
-		/*
-		for(Pion lePionSecret : combinaisonSecrete )
-		{
-			Integer in = lePionSecret.getIdPion();
-			for(Pion lePionJoueur : propositionJoueur)
-			{
-				Integer iot = lePionJoueur.getIdPion();
-				if(iot == in)
-				{
-					blanc++;
-				}
-			}
-			
-		} */
-		
-		
-		
+
 		return blanc;
 	}
-	
-	
+
 }
