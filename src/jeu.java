@@ -14,7 +14,7 @@ public class jeu {
 			
 
 			ArrayList<Integer> code = aleatoire.generationCode();
-			ArrayList<Pion> combinaisonSecrete = aleatoire.combinaisonSecrète(code); // combi secrete
+			ArrayList<Pion> combinaisonSecrete = aleatoire.combinaisonSecrete(code); // combi secrete
 			affichage.ModeTriche(combinaisonSecrete);
 			while (!trouve && essais > 0) {
 				ArrayList<Pion> saisieJoueur = Saisie.saisieCombinaison(); // propo du joueur
@@ -26,9 +26,9 @@ public class jeu {
 				if (blanc == 4) {
 					trouve = true;
 					System.out.println(" ------------------------------------------------------------- ");
-					System.out.println("Vous avez trouvé en  " + (10 - (essais)) + " essais ");
+					System.out.println("Vous avez trouvï¿½ en  " + (10 - (essais)) + " essais ");
 					System.out.println(" ------------------------------------------------------------- ");
-					System.out.println("Bien joué ");
+					System.out.println("Bien jouï¿½ ");
 				} else
 					System.out.println("il vous reste " + essais + " chances ");
 			}
@@ -40,7 +40,7 @@ public class jeu {
 			Window win = new Window("MasterMind", 400, 700);
 
 			ArrayList<Integer> codeWindow = aleatoire.generationCode();
-			ArrayList<Pion> combinaisonSecreteWindow = aleatoire.combinaisonSecrète(codeWindow); // combi secrete
+			ArrayList<Pion> combinaisonSecreteWindow = aleatoire.combinaisonSecrete(codeWindow); // combi secrete
 			Integer nbTours = win.getNumTour();
 			while (!trouve && essais > 0) {
 				

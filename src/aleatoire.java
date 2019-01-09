@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-//couche métier
+//couche mï¿½tier
 public class aleatoire {
 
-	public static int nombreAleatoire() // Donne un nombre aléatoire entre 0 et 7
+	public static int nombreAleatoire() // Donne un nombre alï¿½atoire entre 0 et 7
 	{
 		Random rand = new Random();
 		int nombreCache = 0;
-		nombreCache = rand.nextInt(8) + 1; // aléatoire entre 1 et 8
+		nombreCache = rand.nextInt(8) + 1; // alï¿½atoire entre 1 et 8
 		return nombreCache;
 	}
 
@@ -21,21 +21,21 @@ public class aleatoire {
 			{
 				nbr = nombreAleatoire();
 				if (!res.contains(nbr)) 
-					correspondance = true; // s'il est unique, on peut alors l'ajouter à la liste
+					correspondance = true; // s'il est unique, on peut alors l'ajouter ï¿½ la liste
 			}
 			res.add(nbr);
 		}
 		return res;
 	}
 
-	// Genère la combinaison secrète avec la classe Pion à partir du code secret
-	public static ArrayList<Pion> combinaisonSecrète(ArrayList<Integer> code) {
-		ArrayList<Pion> LesPions = Pion.getLesPions(); // on recupère l'esnemble des couleurs
-		ArrayList<Pion> combi = new ArrayList<Pion>(); // nouvelle Liste qui permettra de stocker la combi secrète avec
+	// Genï¿½re la combinaison secrï¿½te avec la classe Pion ï¿½ partir du code secret
+	public static ArrayList<Pion> combinaisonSecrete(ArrayList<Integer> code) {
+		ArrayList<Pion> LesPions = Pion.getLesPions(); // on recupï¿½re l'esnemble des couleurs
+		ArrayList<Pion> combi = new ArrayList<Pion>(); // nouvelle Liste qui permettra de stocker la combi secrï¿½te avec
 														// la classe Pion
 		for (Integer lecode : code) {
 			for (Pion lePion : LesPions) {
-				if (lePion.getIdPion() == lecode) // si le pion est concerné, on l'ajoute à la combi secrète
+				if (lePion.getIdPion() == lecode) // si le pion est concernï¿½, on l'ajoute ï¿½ la combi secrï¿½te
 					combi.add(lePion);
 			}
 		}
